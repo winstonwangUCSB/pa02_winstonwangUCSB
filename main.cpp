@@ -133,9 +133,16 @@ return 0;
 }
 
 /* Add your run time analysis for part 3 of the assignment here as commented block*/
-/* The first for loop that creates a vector of prefixes is runtime m because it loops the same amount of times as the number prefix values and everything within it is constant time. The last for loop of the main method that prints the highest rated movie is runtime k because it is equal to the amount of prefixes as the get and print functions are all O(1).  
- *
- *
+/* The first for loop that creates a vector of prefixes is runtime m because it loops the 
+ * same amount of times as the number prefix values and everything within it is constant time.
+ * The second for loop that creates priorityqueues of movies with a certain prefix and also stores 
+ * the highest rated movie for each prefix is time complexity m * (n * log(k) + k) since priorityqueue
+ * push function is O(log(length of priority queue which is k) and the for loop surrounding that checks 
+ * every movie so multiply by n and then add by k because of the while loop that prints all the prefix 
+ * movie matches. Multiply all this by m because of the for loop that iterates through the m prefix values.
+ * The last for loop of the main method that prints the highest rated movie is runtime k because
+ * it is equal to the amount of prefixes as the get and print functions are all O(1).  
+ * This results in a total time complexity of m + k + mnlog(k) + mk. This results in a big O notation of mnlog(k).
  */
 
 
