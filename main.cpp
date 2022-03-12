@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <set>
 #include <queue>
+#include "Movie.h"
 using namespace std;
 
 
@@ -35,11 +36,15 @@ int main(int argc, char** argv){
   }
   
 //Create an object of a STL data-structure to store all the movies
+vector<Movie> movieVect;
 
 string line, movieName;
 double movieRating;
 // Read each file and store the name and rating
 while (getline (movieFile, line) && parseLine(line, movieName, movieRating)){
+  parseLine(line, movieName, movieRating);
+  Movie m = new Movie(movieName, movieRating);
+  movieVect.push_back(m)
   // Use std::string movieName and double movieRating
   // to construct your Movie objects
   // cout << movieName << " has rating " << movieRating << endl;
@@ -50,6 +55,11 @@ movieFile.close();
 
 if(argc == 2){
   //print all the movies in ascending alphabetical order of movie names
+  sort(movieVect.begin(), movieVect.end());
+  while(!movieVect.empty()) {
+    cout <<  movieVect.begin().getName() << ", " << movieVect.begin().getRating << endl;
+    movieVect.erase(movieVect.begin());
+  } 
   return 0;
 }
 
