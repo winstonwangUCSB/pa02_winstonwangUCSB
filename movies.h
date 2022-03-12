@@ -10,12 +10,12 @@ class Movie {
 
  public:
     Movie(string name, double rating);  
-    string getName();
-    double getRating();
+    string getName() const;
+    double getRating() const;
     bool operator<(const Movie& m2);
  private:
 	string movieName;
-	double movieRating
+	double movieRating;
 };
 
 #endif

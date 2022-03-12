@@ -1,5 +1,5 @@
 
-#include "movie.h"
+#include "movies.h"
 
 #include <iostream>
 using namespace std;
@@ -10,10 +10,10 @@ Movie::Movie(string name, double rating) {
 	movieRating = rating;
 }
 
-string Movie::getName() {
+string Movie::getName() const {
 	return movieName;
 }
-double Movie::getRating() {
+double Movie::getRating() const {
 	return movieRating;
 }
 
