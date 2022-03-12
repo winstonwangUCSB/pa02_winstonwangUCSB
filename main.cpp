@@ -109,7 +109,7 @@ for (int i = 0; i < prefixes.size(); i++) {
                 highRating.push_back(prefixMovies.top());
         }
 	if (prefixMovies.empty()) {
-		cout<<"No movies found with prefix "<< prefixes.at(i) <<endl<<endl;
+		cout<<"No movies found with prefix "<< prefixes.at(i) <<endl;
 	} else {
 		while (!prefixMovies.empty()) {
 			Movie mPop = prefixMovies.top();
