@@ -62,7 +62,7 @@ if(argc == 2){
   //print all the movies in ascending alphabetical order of movie names
   sort(movieVect.begin(), movieVect.end());
   while(!movieVect.empty()) {
-    cout <<  movieVect.at(0).getName() << ", " << movieVect.at(0).getRating() << endl;
+    cout <<  movieVect.at(0).getName() << ", " << std::fixed << std::setprecision(1) << movieVect.at(0).getRating() << endl;
     movieVect.erase(movieVect.begin());
   } 
   return 0;
@@ -104,14 +104,13 @@ for (int i = 0; i < prefixes.size(); i++) {
                 highRating.push_back(Movie("", 0.0));
         } else {
                 highRating.push_back(prefixMovies.top());
-                cout << prefixMovies.top().getName();
         }
 	if (prefixMovies.empty()) {
 		cout<<"No movies found with prefix "<<"<replace with prefix>"<<endl<<endl;
 	} else {
 		while (!prefixMovies.empty()) {
 			Movie mPop = prefixMovies.top();
-			cout << mPop.getName() << ", " << mPop.getRating() << endl;
+			cout << mPop.getName() << ", " << std::fixed << std::setprecision(1) << mPop.getRating() << endl;
 			prefixMovies.pop();
 		}
 	}
