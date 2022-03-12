@@ -19,9 +19,9 @@ class ratingCompare {
 	public :
 	bool operator() (Movie m1, Movie m2) const {
 		if (m1.getRating() == m2.getRating()) {
-			return m1.getName() < m2.getName();
+			return m1.getName() > m2.getName();
 		}
-		return m1.getRating() < m2.getRating();
+		return m1.getRating() <= m2.getRating();
 	}
 };
 
