@@ -18,6 +18,9 @@ using namespace std;
 class ratingCompare {
 	public :
 	bool operator() (Movie m1, Movie m2) const {
+		if (m1.getRating == m2.getRating) {
+			return m1.getName() < m2.getName();
+		}
 		return m1.getRating() < m2.getRating();
 	}
 };
@@ -106,7 +109,7 @@ for (int i = 0; i < prefixes.size(); i++) {
                 highRating.push_back(prefixMovies.top());
         }
 	if (prefixMovies.empty()) {
-		cout<<"No movies found with prefix "<<"<replace with prefix>"<<endl<<endl;
+		cout<<"No movies found with prefix "<< prefixes.at(i) <<endl<<endl;
 	} else {
 		while (!prefixMovies.empty()) {
 			Movie mPop = prefixMovies.top();
