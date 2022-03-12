@@ -133,7 +133,10 @@ return 0;
 }
 
 /* Add your run time analysis for part 3 of the assignment here as commented block*/
-
+/* The first for loop that creates a vector of prefixes is runtime m because it loops the same amount of times as the number prefix values and everything within it is constant time. The last for loop of the main method that prints the highest rated movie is runtime k because it is equal to the amount of prefixes as the get and print functions are all O(1).  
+ *
+ *
+ */
 
 
 bool parseLine(string &line, string &movieName, double &movieRating) {
